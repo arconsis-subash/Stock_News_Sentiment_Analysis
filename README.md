@@ -3,16 +3,7 @@
 ## Overview
 The Stock News Sentiment Analysis project aims to extract and analyze sentiment from news articles related to specific stock tickers. By leveraging web scraping, natural language processing, and data visualization techniques, this project provides insights that help investors make informed decisions based on real-time market sentiment.
 
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Workflow](#workflow)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Advantages](#advantages)
-- [License](#license)
-- [Contributing](#contributing)
-- [References](#references)
+
 
 ## Features
 - **Real-time News Scraping**: Fetches the latest news articles for specified stock tickers from [finviz.com](https://finviz.com).
