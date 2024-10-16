@@ -39,3 +39,14 @@ flowchart LR
     C --> D[Sentiment Analysis]
     D --> E[Data Visualization]
     E --> F[Display Results]
+
+
+![image](https://github.com/user-attachments/assets/b4be90c4-5735-4c5d-9082-098672708f6f)
+![image](https://github.com/user-attachments/assets/c65f2b6e-23d9-4dbd-af03-1e54a7897cff)
+![image](https://github.com/user-attachments/assets/a4b353e9-894c-422f-ad3f-f0fe0f899a75)
+![image](https://github.com/user-attachments/assets/a371af7b-efd3-40e2-aa77-161ab713bad0)
+![image](https://github.com/user-attachments/assets/eb5a80d1-20c2-437a-886d-40d6821fd88d)
+
+
+
+
