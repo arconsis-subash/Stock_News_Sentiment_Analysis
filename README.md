@@ -40,6 +40,16 @@ flowchart LR
     D --> E[Data Visualization]
     E --> F[Display Results]
 
+```
+![image](https://github.com/user-attachments/assets/01111f91-84dd-47dd-8a79-e766a0ab538e)
+![image](https://github.com/user-attachments/assets/56c079e0-2782-4604-863d-2ef133c41268)
+![image](https://github.com/user-attachments/assets/cb5bbd86-6f91-4bb0-ad4c-a6ffbbfffa23)
+![image](https://github.com/user-attachments/assets/758ccd09-eb96-423b-b666-c271b71ea1ea)
+![image](https://github.com/user-attachments/assets/614bed63-46a9-4391-b222-8a65ea5b44df)
+
+
+
+
 
 
 
