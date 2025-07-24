@@ -1,22 +1,31 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from finviz_scrapper import get_finviz_news
 from parser import parse_news
 from sentiment import analyze_sentiment
-from plotter import plot_sentiment
-import pandas as pd
 
-def main(ticker):
-    news_table = get_finviz_news(ticker)
-    parsed_news = parse_news(news_table)
-    analyzed_news = analyze_sentiment(parsed_news)
+app = FastAPI()
 
-    df = pd.DataFrame(analyzed_news, columns=['date', 'time', 'title', 'sentiment'])
-    avg_sentiment = df['sentiment'].mean()
+# Allow frontend to access backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change this to your frontend origin in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-    plot_sentiment(df, ticker, avg_sentiment)
+class TickerRequest(BaseModel):
+    ticker: str
 
-    print(df)
-    print(f"\nAverage sentiment: {avg_sentiment:.2f}")
+@app.post("/analyze")
+def analyze_news(request: TickerRequest):
+    try:
+        news_table = get_finviz_news(request.ticker)
+        parsed_news = parse_news(news_table)
+        analyzed_news = analyze_sentiment(parsed_news)
 
-if __name__ == "__main__":
-    ticker = input("Enter a stock ticker: ")
-    main(ticker)
+        return {"ticker": request.ticker, "news": analyzed_news}
+    except Exception as e:
+        return {"error": str(e)}
