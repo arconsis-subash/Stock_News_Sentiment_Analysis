@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# 📈 Stock News Sentiment Analysis App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that fetches the latest stock-related news from [Finviz](https://finviz.com/), performs sentiment analysis using TextBlob (Python), and visualizes the results in a beautiful React + TypeScript frontend.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔍 Get real-time news headlines by stock ticker (e.g., TSLA, AAPL)
+- 💬 Sentiment analysis using TextBlob (positive, negative, neutral)
+- 📊 Visual sentiment feedback with scores and color-coded highlights
+- ⚡ Built with FastAPI (backend) and React + TailwindCSS (frontend)
+- ✅ Fully typed with TypeScript and strict typing enabled
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚙️ Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Backend (FastAPI)
 
-### `npm run build`
+bash
+cd brain
+python3 -m venv venv
+source venv/bin/activate        # For Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Start FastAPI server
+uvicorn app.main:app --reload --port 8000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Frontend (React)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+cd eye
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Start React app
+npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+📦 API Reference
+POST /analyze
+Request Body:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+{
+  "ticker": "TSLA"
+}
+### Response:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+{
+  "ticker": "TSLA",
+  "news": [
+    ["Jul-24-25", "10:30AM", "Tesla stock surges after earnings", 0.25],
+    ...
+  ]
+}
+### 🧪 Tech Stack
+Layer	Tech
+Frontend	React, TypeScript, Tailwind CSS
+Backend	FastAPI, TextBlob, BeautifulSoup
+Data Source	finviz.com
+HTTP Client	Axios
 
-## Learn More
+### 📸 Screenshots
+Coming soon — charts, pie graphs, and improved card UI!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ✅ Todo / Ideas
+ Add sentiment distribution charts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ Add loading and error states
+
+ Export results as CSV or PDF
+
+ Support multiple tickers at once
+
+ Deploy to Vercel + Render/Docker
+
+📝 License
+MIT © 2025 — Subash Shrestha
